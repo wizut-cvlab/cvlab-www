@@ -1,0 +1,62 @@
+---
+title: Raw data
+description: Download raw data files containing depth, thermal, and normal camera footage used in our Driver Fatigue Detection dataset.
+prev: false
+---
+
+import Download from '../../../components/download.jsx';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+Explore and download the raw data files from our Driver Fatigue Detection dataset. These files are provided in ZIP format, each containing different modalities of data collected during our studies. **Please note that the data is raw and unprocessed.**
+
+## Depth Data
+**File Description:** This ZIP file contains depth map videos and point cloud data files captured during the experiments.
+
+  <Card title="Contents">
+    - Number of Video Files: 110
+    - Files: Depth maps and Point Cloud Data
+    - Format: Videos (.mkv)
+    - Total File Size: **2.5GB**
+  </Card>
+
+<Download fileUrl={'/data/DETPH.zip'} client:load />
+
+
+## Thermal Data
+**File Description:** This ZIP file includes thermal imaging videos that capture the thermal signatures of drivers. Thermal cameras detect infrared radiation and provide crucial data for analyzing physiological responses without dependency on lighting conditions.
+
+<Card title="Contents">
+- Number of Video Files: 64
+- Format: Videos (.mkv)
+- Total File Size: **1.6GB**
+</Card>
+
+
+<Download fileUrl={'/data/TERMO.zip'} client:load />
+
+
+## Normal Data - Camera 1 (RGB1)
+**File Description:** This ZIP file contains footage from the first RGB camera. These videos offer a direct visual observation of the driver, capturing typical visible light images essential for conventional video analysis and behavior recognition.
+
+<Card title="Contents">
+- Number of Video Files: 58
+- Format: Videos (.mkv)
+- Total File Size: **8.2GB**
+</Card>
+
+
+<Download fileUrl={'/data/RGB1.zip'} client:load />
+
+## Normal Data - Camera 2 (RGB2)
+**File Description:** This ZIP file contains footage from the second RGB camera, providing an alternative perspective within the same visual range as Camera 1. This dual-camera setup enriches the dataset by offering multiple viewing angles of the driver's behaviors.
+
+<Card title="Contents">
+- Number of Video Files: 60
+- Format: Videos (.mkv)
+- Total File Size: **11,4GB**
+</Card>
+
+
+<Download fileUrl={'/data/RGB2.zip'} client:load />
+
+---

@@ -1,0 +1,51 @@
+---
+title: Welcome to CVLab!
+description: Access our extensive datasets and explore cutting-edge research in computer vision and driver fatigue detection.
+template: splash
+hero:
+  tagline: C[omputer]V[ision]Lab is an academic initiative by the Multimedia Systems Department of the Faculty of Computer Science and Information Technology at ZUT. Our lab focuses on enabling the sharing of author’s research data and the results of recent research. We aim to provide scientists access to our datasets that serve as benchmarks for developing new methods.
+  image:
+    file: ../../assets/cvlab.webp
+  actions:
+    - text: Discover Our Driver Fatigue Research
+      link: /descriptions/1_drowsiness/
+      icon: right-arrow
+      variant: primary
+
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+
+## What We Offer
+
+<CardGrid stagger>
+	<Card title="Explore Modalities" icon="puzzle">
+		Learn about the different modalities we use: visual image, depth map, and thermal image to capture comprehensive data.
+	</Card>
+	<Card title="Understand Recorded Events" icon="random">
+		Discover the specific behaviors we record, including yawning, eye rubbing, and head dropping to detect driver fatigue.
+	</Card>
+	<Card title="Uniform Measuring Stand" icon="seti:happenings">
+		All records were made under identical lighting and position conditions. Our stand is designed for multispectral data acquisition to assess driver's fatigue, featuring five monitors, a steering wheel, and three different cameras.
+	</Card>
+	<Card title="Download Data" icon="seti:argdown">
+		Access both raw and processed data, ready for your research and development in fatigue detection algorithms. Explore raw multimodal data or download uniform and processed clips for further analysis.
+	</Card>
+</CardGrid>
+
+
+
+
+
+
+<div style="display: flex; align-items: center; justify-content: space-around; margin-top:150px;">
+	<div style="width: 50%">![Footer Image 1](../../assets/wi.webp)</div> 
+	<div style="width: 50%">![Footer Image 2](../../assets/zut.webp)</div>
+</div>
+
+  
+<div style="text-align: center; margin-top: 40px;">
+  &copy; 2024 Faculty of Computer Science and Information Technology, West Pomeranian University of Technology in Szczecin.
+</div>
+---

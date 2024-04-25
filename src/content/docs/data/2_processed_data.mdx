@@ -1,0 +1,37 @@
+---
+title: Processed Data
+description: Download the processed video files from our Driver Fatigue Detection dataset, formatted and ready for analysis.
+
+---
+
+import Download from '../../../components/download.jsx';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+Explore and download the processed video files from our Driver Fatigue Detection dataset. This data has been carefully edited, cropped, and scaled to ensure uniformity and relevance for fatigue detection studies. The files are sorted by participant, with each of the 44 participants having four MP4 files, each showcasing different aspects of the driver's behavior during the experiment.
+
+## File Details
+
+**File Description:** The ZIP archive contains processed data for 44 participants. Each participant's data is organized into four MP4 files, which have been cropped to focus on the Region of Interest (ROI) and scaled to uniform dimensions to facilitate comparative analysis.
+
+
+<Card title="Contents">
+    - Number of Participants: 44
+    - Files per Participant: 4
+    - Format: Videos (.mp4)
+    - Total File Size: **2.2GB**
+</Card>
+
+<Download fileUrl={'/data/subjects.zip'} client:load />
+
+## Data Preparation Details
+
+Each video file within the dataset has undergone a series of preprocessing steps to ensure the highest quality and relevance for fatigue detection studies. Here’s a breakdown of how the videos were prepared:
+
+1. **Cropping to ROI:** All videos have been meticulously cropped to ensure that only the most relevant sections of the video frame that contribute to fatigue detection are included. This focuses the analysis on key areas such as the eyes, mouth, and overall facial expressions of the drivers.
+
+2. **Uniform Scaling:** Videos have been uniformly resized to maintain consistent dimensions across all files. This standardization is crucial for ensuring that each video file provides a consistent basis for automated analysis or machine learning applications.
+
+For a more detailed explanation of the initial data handling and preprocessing steps, please visit our [Data Preparation](/descriptions/2_data_preprocessing/) page. This page provides insights into the foundational processing techniques used before the final preparation stages outlined here.
+
+---
+

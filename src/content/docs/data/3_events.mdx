@@ -1,0 +1,59 @@
+---
+title: Event-Based Data
+description: Download segmented video clips and CSV files detailing specific fatigue-related events for each participant.
+
+---
+
+import Download from '../../../components/download.jsx';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+This page provides access to segmented video clips and detailed CSV files for our Driver Fatigue Detection dataset. These resources are specifically structured to facilitate the study of distinct fatigue-related events across different subjects.
+
+## Video Clips by Event and Subject
+**File Description:** This ZIP archive contains 44 folders, one for each participant. Each participant's folder is further divided into five subfolders, corresponding to different classes of fatigue-related events. These clips are extracted from processed video data, showing specific behaviors such as yawning, eye rubbing, etc.
+
+
+<Card title="Contents">
+- Number of Participant Folders: 44
+- Subfolders per Participant: 5 (one for each class of event)
+- Format: Videos (.mp4)
+- Total File Size: **227MB**
+</Card>
+
+<Download fileUrl={'/data/events.zip'} client:load />
+
+## Classes
+1. **Yawning without Covering Mouth**: Videos capturing subjects yawning openly, which is a common sign of tiredness.
+2. **Frequent Blinking**: Recordings of subjects blinking more frequently than usual, which can indicate the early stages of fatigue.
+3. **Yawning with Mouth Covered**: This class includes videos where subjects cover their mouths while yawning, often considered a social behavior to mask tiredness.
+4. **Head Dropping**: This category features subjects whose heads drop in a nodding motion, indicating severe drowsiness or loss of alertness.
+5. **Eye Rubbing**: Subjects are shown rubbing their eyes, a behavior typically associated with fatigue and eye strain.
+
+
+## Naming Convention for Files
+The naming convention for the annotated video files is structured to ensure easy identification and sorting of data:
+- **Format:** `<modality>_<participant_id>_<class_id>_<event_id>`
+  - **Modality:** Indicates the mode of the recording (`depth`, `normal`, `normal2`, `termo`).
+  - **Participant ID:** A number ranging from 1 to 44 representing each participant.
+  - **Class ID:** A number from 1 to 5 that identifies the class of the event.
+  - **Event ID:** Corresponds to the row number in the respective CSV file, acting as a unique identifier for each event. It may not necessarily appear in sequential order.
+- **Separator:** An underscore `_` is used to separate different elements of the file name.
+
+Examples of file names:
+- `normal_3_2_15.mp4`: This file name indicates it is from the `normal` modality, belongs to participant `3`, is of class `2`, and is the 15th event recorded for this participant.
+- `depth_22_4_07.mp4`: This file name indicates it is from the `depth` modality, belongs to participant `22`, is of class `4`, and is the 7th event recorded for this participant.
+
+
+## Event Annotations in CSV Format
+**File Description:** This ZIP file contains CSV files for each participant. These manually recorded annotations detail the events observed in the RGB1 (`normal`) video clips. Each event is described by three parameters: class of the event, start frame, and end frame. This provides a precise temporal annotation of each occurrence. The annotations were initially made on the RGB1 mode and subsequently mapped onto the other modes (depth, thermal). Each event is represented as a separate row in the CSV, described by three columns: event class number, start frame number, and end frame number where the event occurred.
+
+<Card title="Contents">
+- Number of CSV Files: 44 (one for each participant)
+- Description of Parameters: Event class, Start Frame, End Frame
+- Format: CSV
+- Total File Size: **10KB**
+</Card>
+
+<Download fileUrl={'/data/csv.zip'} client:load />
+
+---

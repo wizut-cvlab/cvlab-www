@@ -1,0 +1,57 @@
+---
+title: Classified Event Videos
+description: Download the ZIP archive containing classified video clips from our Driver Fatigue Detection dataset, each categorized into specific behavioral classes.
+next: false
+---
+
+import Download from '../../../components/download.jsx';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+Download the comprehensive ZIP archive that includes video clips classified into six different behavioral classes, each depicting specific types of driver behaviors identified during our studies. These clips are useful for detailed analysis and training of machine learning models aimed at detecting driver fatigue and related behaviors.
+
+<Card title="Contents">
+- Number of Events Recorded: 976 (for each modality)
+- Folders per Modality: 6 classes (including Class 0 for normal behavior)
+- Format: Videos (.mp4)
+- Total File Size: **357MB**
+</Card>
+
+<Download fileUrl={'/data/classes.zip'} client:load />
+
+## Class Descriptions
+Each video in the dataset falls into one of the following classes:
+- **Class 0 - Normal Behavior**: Videos showing standard, non-fatigue-related behavior. Four clips per participant, each lasting 3 seconds, taken from the initial phase of the study.
+- **Class 1 - Yawning without Covering Mouth**: Videos of subjects yawning openly without covering their mouths.
+- **Class 2 - Frequent Blinking**: Videos of subjects blinking more frequently than usual, a sign of increasing fatigue.
+- **Class 3 - Yawning with Mouth Covered**: Videos where subjects cover their mouths while yawning.
+- **Class 4 - Head Dropping**: Videos showing subjects letting their heads drop forward, indicating a loss of muscle control due to drowsiness.
+- **Class 5 - Eye Rubbing**: Videos capturing subjects rubbing their eyes.
+
+## File Counts by Class
+- **Class 0:** 176 videos 
+- **Class 1:** 100 videos
+- **Class 2:** 83 videos
+- **Class 3:** 105 videos
+- **Class 4:** 390 videos
+- **Class 5:** 122 videos
+
+Each class includes recordings from all four modalities:
+- Depth
+- RGB1 (`normal`)
+- RGB2 (`normal2`)
+- Thermal
+
+## Naming Convention for Files
+The naming convention for the annotated video files is structured to ensure easy identification and sorting of data:
+- **Format:** `<modality>_<participant_id>_<class_id>_<event_id>`
+  - **Modality:** Indicates the mode of the recording (`depth`, `normal`, `normal2`, `termo`).
+  - **Participant ID:** A number ranging from 1 to 44 representing each participant.
+  - **Class ID:** A number from 1 to 5 that identifies the class of the event.
+  - **Event ID:** Corresponds to the row number in the respective CSV file, acting as a unique identifier for each event. It may not necessarily appear in sequential order.
+- **Separator:** An underscore `_` is used to separate different elements of the file name.
+
+Examples of file names:
+- `normal_3_2_15.mp4`: This file name indicates it is from the `normal` modality, belongs to participant `3`, is of class `2`, and is the 15th event recorded for this participant.
+- `depth_22_4_07.mp4`: This file name indicates it is from the `depth` modality, belongs to participant `22`, is of class `4`, and is the 7th event recorded for this participant.
+
+---
